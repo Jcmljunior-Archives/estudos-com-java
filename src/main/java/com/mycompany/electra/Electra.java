@@ -1,33 +1,18 @@
 package com.mycompany.electra;
 
-import com.mycompany.electra.packages.People;
+import com.mycompany.electra.packages.User;
 
 public class Electra {
-  static People people;
+
+  static User user;
 
   public static void main(String[] args) {
-    /**
-     * Declarar pessoa.
-     */
-    people = new People();
+    user = new User();
+    user.setName("Julio Junior");
 
-    /**
-     * Definir caracteristicas.
-     */
-    people
-      .setName("Julio Cesar")
-      .setAge(22)
-      .setProfession("Ciencia e computação");
-
-    /**
-     * Imprimindo resultado.
-     */
-    System.out.format(
-      "Nome: %s\nIdade: %d\nProfissão: %s\n",
-      people.getName(),
-      people.getAge(),
-      people.getProfission()
-    );
+    String[] name = user.getName().split(" ");
+    System.out.println("O meu nome é: " + name[0]);
+    System.out.println("O meu sobrenome é: " + name[1]);
   }
 
 }

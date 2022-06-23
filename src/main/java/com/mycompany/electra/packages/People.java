@@ -1,15 +1,13 @@
 package com.mycompany.electra.packages;
 
-public class People {
-  /**
-   * Caracteristicas.
-   */
+public abstract class People implements PeopleInterface {
   private String name;
-  private int age;
-  private String profession;
+  private String profission;
 
   /**
-   * Métodos.
+   * Define o nome da pessoa.
+   * @param name nome da pessoa.
+   * @return People
    */
   public People setName(String name) {
     this.name = name;
@@ -17,28 +15,31 @@ public class People {
     return this;
   }
 
-  public People setAge(int age) {
-    this.age = age;
-
-    return this;
-  }
-
-  public People setProfession(String profession) {
-    this.profession = profession;
-
-    return this;
-  }
-
+  /**
+   * Retorna o nome da pessoa.
+   * @return nome da pessoa.
+   */
   public String getName() {
     return this.name;
   }
 
-  public int getAge() {
-    return this.age;
+  /**
+   * Define a profissão da pessoa.
+   * @param profission Cargo de pessoa.
+   * @return People
+   */
+  public People setProfission(String profission) {
+    this.profission = profission;
+
+    return this;
   }
 
+  /**
+   * Retorna a profissão de pessoa.
+   * @return profissão pessoa.
+   */
   public String getProfission() {
-    return this.profession;
+    return this.profission;
   }
 
 }
