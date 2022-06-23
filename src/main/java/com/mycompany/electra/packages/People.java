@@ -1,8 +1,16 @@
 package com.mycompany.electra.packages;
 
-public abstract class People implements PeopleInterface {
+public class People implements PeopleInterface {
   private String name;
   private String profission;
+
+  /**
+   * Construtor.
+   */
+  public People(String name, String profission) {
+    this.setName(name);
+    this.setProfission(profission);
+  }
 
   /**
    * Define o nome da pessoa.

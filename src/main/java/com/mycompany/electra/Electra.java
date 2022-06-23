@@ -1,18 +1,41 @@
 package com.mycompany.electra;
 
-import com.mycompany.electra.packages.User;
+import com.mycompany.electra.packages.People;
 
 public class Electra {
+  
+  public static void main(String[] args) throws Exception {
+    /**
+     * Valor padrão inserido via construtor.
+     */
+    String name = "Julio Cesar";
+    String profission = "Programador";
 
-  static User user;
+    /**
+     * Classe pessoa.
+     */
+    People people = new People(name, profission);
 
-  public static void main(String[] args) {
-    user = new User();
-    user.setName("Julio Junior");
+    /**
+     * Imprimir valor padrão.
+     */
+    console(people);
 
-    String[] name = user.getName().split(" ");
-    System.out.println("O meu nome é: " + name[0]);
-    System.out.println("O meu sobrenome é: " + name[1]);
+    /**
+     * Atualização de dados.
+     */
+    people.setName("João");
+    people.setProfission("Padeiro");
+
+    /**
+     * Imprimir novo valor.
+     */
+    console(people);
+  }
+
+  public static void console(People people) {
+    System.out.println(people.getName());
+    System.out.println(people.getProfission());
   }
 
 }
